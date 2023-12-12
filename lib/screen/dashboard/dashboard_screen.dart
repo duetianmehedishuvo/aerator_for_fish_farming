@@ -87,7 +87,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Center(child: Text("Develop From Prof. Dr. Obaidur Rahman LAB", style: sfProStyle400Regular.copyWith(fontSize: 16))),
+                    Center(child: Text("Developed by Prof. Dr. Obaidur Rahman, LAB.", style: sfProStyle400Regular.copyWith(fontSize: 16))),
                     const SizedBox(height: 20),
                   ],
                 );
