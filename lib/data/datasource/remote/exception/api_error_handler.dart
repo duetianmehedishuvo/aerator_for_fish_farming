@@ -6,21 +6,21 @@ class ApiErrorHandler {
     dynamic errorDescription = "";
     if (error is Exception) {
       try {
-        if (error is DioError) {
+        if (error is DioException) {
           switch (error.type) {
-            case DioErrorType.cancel:
+            case DioExceptionType.cancel:
               errorDescription = "Request to API server was cancelled";
               break;
-            case DioErrorType.connectionTimeout:
+            case DioExceptionType.connectionTimeout:
               errorDescription = "Connection timeout with API server";
               break;
-            case DioErrorType.unknown:
+            case DioExceptionType.unknown:
               errorDescription = "Connection to API server failed due to internet connection";
               break;
-            case DioErrorType.receiveTimeout:
+            case DioExceptionType.receiveTimeout:
               errorDescription = "Receive timeout in connection with API server";
               break;
-            case DioErrorType.badResponse:
+            case DioExceptionType.badResponse:
               switch (error.response!.statusCode) {
                 case 400:
                   errorDescription =
@@ -53,13 +53,13 @@ class ApiErrorHandler {
                   }
               }
               break;
-            case DioErrorType.sendTimeout:
+            case DioExceptionType.sendTimeout:
               errorDescription = "Send timeout with server";
               break;
-            case DioErrorType.badCertificate:
+            case DioExceptionType.badCertificate:
               errorDescription = "Send timeout with server";
               break;
-            case DioErrorType.connectionError:
+            case DioExceptionType.connectionError:
               errorDescription = "Send timeout with server";
               break;
           }

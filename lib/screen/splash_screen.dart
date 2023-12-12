@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(seconds: 4), () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (_) => DashboardScreen()));
+      Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DashboardScreen()));
     });
   }
 
