@@ -16,7 +16,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => SplashRepo(dioClient: sl()));
 
   // Provider
-  sl.registerFactory(() => AuthProvider());
+  sl.registerFactory(() => AuthProvider(splashRepo: sl()));
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();

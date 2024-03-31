@@ -2,9 +2,8 @@
 
 class AppConstant {
   // API BASE URL
-  static const String baseUrl = 'https://evue.in/hirecharge/api/';
-  static const String imageBaseUrl = 'https://evue.in/hirecharge/images/';
-  static const String loginURI = 'login';
+  static const String baseUrl = 'http://test2.pathon.app/api/';
+  static const String getAllData = 'getAllData';
   static const String signUPURI = 'register';
   static const String logoutURI = 'logout';
   static const String countTotalCustomer = 'countTotalCustomer';
