@@ -29,11 +29,11 @@ class AuthProvider with ChangeNotifier {
     return orginalDataModel;
   }
 
-  void updateAllData(int status) async {
+  void updateAllData(int status,int id) async {
     _isLoading = true;
-    OrginalDataModel o = orginalDataModel;
-    o.motorStatus = status;
-    ApiResponse response = await splashRepo.updateAllData(o);
+    // OrginalDataModel o = orginalDataModel;
+    // o.motorStatus = status;
+    ApiResponse response = await splashRepo.updateAllData(status,id);
     _isLoading = false;
 
     if (response.response.statusCode == 200) {

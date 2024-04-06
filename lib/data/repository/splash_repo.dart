@@ -20,11 +20,10 @@ class SplashRepo {
     }
   }
 
-  Future<ApiResponse> updateAllData(OrginalDataModel orginalDataModel) async {
+  Future<ApiResponse> updateAllData(int status, int id) async {
     Response response = Response(requestOptions: RequestOptions(path: '22222'));
     try {
-      response = await dioClient.get(
-          'updateData?adcTemperature=121&adcVoltage=${orginalDataModel.adcVoltage}&do=${orginalDataModel.do1}&motorStatus=${orginalDataModel.motorStatus}&phValue=${orginalDataModel.phValue}&phVoltage=${orginalDataModel.phVoltage}&temperatureC=${orginalDataModel.temperatureC}&temperatureF=${orginalDataModel.temperatureF}&id=${orginalDataModel.id}');
+      response = await dioClient.post('updateMotor', data: {'motor_status': status, 'id': id});
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e), response);
